@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+:root {
+  --Bright-orange: hsl(31, 77%, 52%);
+  --Very-dark-cyan: hsl(179, 100%, 13%);
+  --Dark-cyan: hsl(184, 100%, 22%);
+  --White: hsla(0, 0%, 100%, 0.75);
+  --Very-Light-Gray: hsl(0, 0%, 95%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 15px;
+  font-family: "Lexend Deca", sans-serif;
+  background-color: var(--Very-Light-Gray);
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5em 2em;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  h1 {
+    font-size: 35px;
+    text-transform: uppercase;
+    color: var(--Very-Light-Gray);
+    font-family: "Big Shoulders Display", cursive;
+  }
+  p {
+    color: var(--White);
+    line-height: 1.5;
+    max-width: 30em;
+  }
+}
+.card {
+  padding: 3em 2.5em;
+  min-height: 25em;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: start;
+}
+button {
+  border-style: none;
+  border-radius: 40px;
+  padding: 1em 2.5em;
+  background-color: var(--Very-Light-Gray);
+  border: 2px solid var(--Very-Light-Gray);
+  align-self: end;
+  cursor: pointer;
+}
+.sedans {
+  background-color: var(--Bright-orange);
+  button {
+    color: var(--Bright-orange);
+    &:hover {
+      background-color: var(--Bright-orange);
+      color: var(--Very-Light-Gray);
+    }
+  }
+  border-radius: 10px 10px 0px 0px;
+}
+.suvs {
+  background-color: var(--Dark-cyan);
+  button {
+    color: var(--Dark-cyan);
+    &:hover {
+      background-color: var(--Dark-cyan);
+      color: var(--Very-Light-Gray);
+    }
+  }
+}
+.luxury {
+  background-color: var(--Very-dark-cyan);
+  button {
+    color: var(--Very-dark-cyan);
+    &:hover {
+      background-color: var(--Very-dark-cyan);
+      color: var(--Very-Light-Gray);
+    }
+  }
+  border-radius: 0px 0px 10px 10px;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 65%;
+  }
+  .card {
+    min-height: 30em;
+  }
+  .sedans {
+    border-radius: 10px 0px 0px 10px;
+  }
+  .luxury {
+    border-radius: 0px 10px 10px 0px;
+  }
+}
